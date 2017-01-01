@@ -67,7 +67,7 @@ func (vSelf *DownTheDriveDb) BeginItemBulk() (vRisBeginned bool, vRisError error
 	if vInitError != nil {
 		return false, diagnostic.NewError("initialization failed", vInitError)	
 	}
-	vBeginBulk,vBeginBulkError:= vSelf.itemInsert.BeginBulk()
+	vBeginBulk,vBeginBulkError:= vSelf.itemInsert.BeginBulk(db.BulkOptions{})
 	if vBeginBulkError != nil {
 		return false, diagnostic.NewError("failed to begin bulk ", vBeginBulkError)
 	}
