@@ -7,7 +7,6 @@ import (
 
 type ActionIndex struct {
 	genericAction
-	drivePath string
 	threads   int
 }
 
@@ -51,7 +50,7 @@ func (vSelf *ActionIndex) Execute() error {
 		return diagnostic.NewError("An error occurred while creating indexer", vStartIndexingError)
 	}
 
-	vIndexDrivePathError := vIndexer.IndexDrivePath(vSelf.drivePath)
+	vIndexDrivePathError := vIndexer.IndexDrivePath(vSelf.genericAction.drivePath)
 	if vIndexDrivePathError != nil {
 		return vIndexDrivePathError
 	}
