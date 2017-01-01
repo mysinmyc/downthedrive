@@ -45,11 +45,15 @@ func (vSelf *Downloader) downloadItemRecursively(pContext *DownTheDriveContext, 
 }
 
 func (vSelf *Downloader) Download() error {
-
+	diagnostic.LogInfo("Downloader.Download", "Download started...")
 	vError := vSelf.itemProcessor.Process(vSelf.localStore.GetOneDriveBaseItemPath())
-	if vError != nil {
+	if vError ==nil {
+		diagnostic.LogInfo("Downloader.Download","Download succeded")
+	} else {
+		diagnostic.LogWarning("Downloader.Download","Download failed",vError)
 		return diagnostic.NewError("An error occurred downloading items", vError)
 	}
+
 
 	return nil
 }

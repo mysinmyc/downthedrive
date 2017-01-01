@@ -123,7 +123,7 @@ specify / as drivePath to index the entire drive
 To download a folder locally from the drive type the following command:
 
 ```
-downthedrive download -drivePath {drivePath} -localPath {local path where to store items}
+downthedrive download -drivePath {drivePath} -localStorePath {local path where to store items}
 
 ```
 
