@@ -125,6 +125,7 @@ To download a folder locally from the drive type the following command:
 ```
 downthedrive download -drivePath {drivePath} -localPath {local path where to store items}
 
+```
 
 
 ### Navigate the drive content via a local website
